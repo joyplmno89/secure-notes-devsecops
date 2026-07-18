@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow border-0">
+            <div class="card-body p-5 text-center">
+                <h2 class="mb-3">Dashboard Seguro</h2>
+
+                <p class="lead text-success">
+                    Acceso autenticado correctamente 🔐
+                </p>
+
+                <p class="text-muted">
+                    Esta sección solo puede ser visualizada por usuarios autenticados.
+                    La ruta está protegida mediante Flask-Login.
+                </p>
+
+                <div class="alert alert-info mt-4">
+                    Buenas prácticas aplicadas:
+                    <br>
+                    Contraseñas protegidas con hash.
+                    <br>
+                    Formularios protegidos con CSRF.
+                    <br>
+                    Sesiones controladas con Flask-Login.
+                    <br>
+                    Variables sensibles cargadas desde archivo .env.
+                </div>
+
+                <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">
+                    Cerrar sesión
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
